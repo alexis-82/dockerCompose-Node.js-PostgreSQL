@@ -32,7 +32,7 @@ Questo repository contiene un piccolo progetto realizzato con Node.js e PostgreS
 Per creare una rete Docker personalizzata, usa il seguente comando:
 
 ```bash
-docker network create my_network
+docker network create $nomeRete
 ```
 
 ## Esempi comandi:
