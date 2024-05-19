@@ -15,6 +15,7 @@ Questo repository contiene un piccolo progetto realizzato con Node.js e PostgreS
 - `docker-compose up --force-recreate`: Questo comando rigenera i container definiti nel file docker-compose.yml.
 - `docker-compose up -d`: Avvia i container in modalità "detached" (in background).
 - `docker-compose ls`: Elenca tutti i progetti Docker Compose presenti sul sistema.
+- `docker-compose down`: Ferma i container.
 - `docker-compose config`: Convalida e visualizza la configurazione Compose completa.
 - `docker network create $nomeRete`: Per creare un Docker network personalizzato
 
