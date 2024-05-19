@@ -1,19 +1,23 @@
+version: '3.8'
+
 services:
-  nodeapp:
-    depends_on:
-      - db
-    build: .
-    ports:
-      - 8080:8080
-    env_file:
-      - node.env
-    restart: always
   db:
     image: postgres
-    env_file:
-      - postgres.env
+    container_name: node_dbpg_1
     ports:
-      - 5432:5432
-    restart: always
+      - "5432:5432"
     volumes:
       - ./scripts/full.sql:/docker-entrypoint-initdb.d/full.sql
+    restart: always
+    env_file:
+      - postgres.env
+
+  web:
+    image: web_node-node
+    container_name: node_web_node_1
+    ports:
+      - "8080:8080"
+    env_file:
+      - node.env
+    depends_on:
+      - db
