@@ -1,0 +1,19 @@
+services:
+  nodeapp:
+    depends_on:
+      - db
+    build: .
+    ports:
+      - 8080:8080
+    env_file:
+      - node.env
+    restart: always
+  db:
+    image: postgres
+    env_file:
+      - postgres.env
+    ports:
+      - 5432:5432
+    restart: always
+    volumes:
+      - ./scripts/full.sql:/docker-entrypoint-initdb.d/full.sql
