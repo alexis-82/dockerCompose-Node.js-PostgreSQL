@@ -35,6 +35,12 @@ Per creare una rete Docker personalizzata, usa il seguente comando:
 docker network create $nomeRete
 ```
 
+invece per rimuovere una rete:
+
+```bash
+docker network rm $nomeRete
+```
+
 ## Esempi comandi:
 
 `docker run -d --name node_dbpg_1 --network $nomeRete -p 5432:5432 -v ./scripts/full.sql:/docker-entrypoint-initdb.d/full.sql --restart always --env-file postgres.env postgres`
